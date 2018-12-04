@@ -1,5 +1,92 @@
-$bgcolor: #FDFAEB;
+@import "custom";
+
+$bgcolor: #D3BCC0;
+$textcolor: #F2D7ED;
+$bordercolor: #69306D;
+$jumbocolor: #69306D;
+$categoriescolor: #A5668B;
+$cardwidth: 254px;
+$cardheight: 456px;
 
 body {
 	background-color: $bgcolor;
+}
+
+#category-list {
+	background-color: $bordercolor;
+}
+
+.category-wrapper {
+	padding-bottom: 15px;
+}
+
+[id^="category"] {
+	.active {
+		background-color: $categoriescolor !important;
+		color: #C0ABAF !important;
+	}
+	a:hover {
+		color: #885472;
+		background-color: #AD9A9E;
+	}
+	background-color: #C0ABAF;
+	color: $categoriescolor;
+	border: 2px $bordercolor solid;
+}
+
+.content {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+#product-list {
+	background: #C0ABAF;
+}
+
+.product {
+	width: $cardwidth;
+	min-height: $cardheight;
+	padding: 2px 2px 0 2px;
+	margin: 0 auto;
+}
+
+.card-image {
+	margin: auto;
+	max-width: 250px;
+	max-height: 200px;
+}
+
+#product-info {
+	padding: 10px 15px 0 15px;
+}
+
+.jumbotron, .footer {
+	background-color: $jumbocolor;
+	padding: 10px 0px;
+	color: $textcolor;
+}
+
+footer {
+	margin-top: 2rem;
+}
+
+.logo {
+	font-weight: bold;
+
+	.techno {
+		color: #F2D7ED;
+	}
+
+	.junkie	{
+		color: #0E103D;
+	}
+}
+
+.head-container {
+	padding-left: 35px;
+}
+
+.old-price {
+	text-decoration: line-through;
+	color: #999;
 }

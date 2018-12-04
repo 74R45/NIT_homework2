@@ -5,17 +5,37 @@
 	<title>T3CHN0junkie - newest gadgets from around the world!</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="./js/main.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="./css/main.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 <body>
-	<div style="max-width: 1200px; margin: 0 auto; padding: 10px;">
-		<div class="container-fluid">
-			<div class="">
+	<div>
+		<header class="jumbotron jumbotron-fluid">
+			<div class="container-fluid head-container">
+				<h1 class="display-4 logo"><span class="techno">TECHNO</span><span class="junkie">junkie</span></h1>
+				<p class="lead">Newest gadgets from around the world!</p>
+			</div>
+		</header>
+		<div class="content container-fluid">
+			<div class="row">
+				<div class="category-wrapper col-lg-3 col-md-4">
+					<div class="nav flex-column nav-pills" id="category-list" aria-orientation="vertical">
+						<a class="nav-link active" id="categoryall" data-toggle="pill" onclick="changeView('all')" aria-selected="true">All products</a>
+					</div>
+				</div>
+				<div class="col-lg-9 col-md-8">
+					<div class="row" id="product-list">
+						<!--This is where the products are gonna be inserted via jQuery-->
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+	<footer class="footer">
+		<div class="container">
+			<p>Designed and built with all the love in the world by <a href="https://www.facebook.com/x74R45">Taras Kreshchenko</a>.</p>
+		</div>
+	</footer>
+	<script src="./js/main.js"></script>
+	<script src="./js/tools.js"></script>
 </body>
 </html>
