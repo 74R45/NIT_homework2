@@ -260,7 +260,7 @@ $("#inputForm").on("submit", function(event) {
 		data: data,
 		dataType: 'json',
 		success: function(json) {
-			console.log(data);
+			console.log(json);
 		}
 	});
 });
