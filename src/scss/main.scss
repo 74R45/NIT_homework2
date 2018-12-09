@@ -235,6 +235,7 @@ footer {
 	color: $pink2;
 	text-align: center;
 	border-radius: 6px;
+	border: 1px solid $purple1;
 	padding: 6px;
 	position: relative;
 	z-index: 1;
@@ -249,7 +250,7 @@ footer {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: $silver2 transparent transparent transparent;
+    border-color: $purple1 transparent transparent transparent;
 }
 
 .popup.show {

@@ -63,7 +63,7 @@ $.getJSON("https://nit.tron.net.ua/api/product/list")
 						<h5 class="card-title" onclick="openDescription(${obj.id})">${obj.name}</h5>
 						${crossed}
 						<h4 class="price">${price}</h4>
-						<span class="popup" id="popup${obj.id}">Added to cart!</span>
+						<span class="popup popup${obj.id}">Added to cart!</span>
 						<button type="button" class="btn btn-primary" id="addtocartbtn${obj.id}" onclick="addToCart(${obj.id})">
 							<div class="d-flex align-items-center row cartrow">
 								<div id="cartaddimg"></div>
@@ -126,7 +126,7 @@ function openDescription(item_id) {
 				<p id="descriptiontext">${item.description.replace(/\r\n/g, "<br>")}</p>
 				${crossed}
 				<h4 class="price">${price}</h4>
-				<span class="popup" id="popup${item.id}">Added to cart!</span>
+				<span class="popup popup${item.id}">Added to cart!</span><br>
 				<button type="button" class="btn btn-primary" id="addtocartbtn${item.id}" onclick="addToCart(${item.id})">
 					<div class="d-flex align-items-center row cartrow">
 						<div id="cartaddimg"></div>
@@ -169,11 +169,13 @@ $("#backbutton").click(function() {
 });
 
 function addToCart(item_id) {
-	var popup = $(`#popup${item_id}`);
-	if (!popup.hasClass("show")) {
-		popup.toggleClass("show");
-		setTimeout(function(){popup.toggleClass("show")}, 2000);
-	}
+	$(`.popup${item_id}`).each(function() {
+		var popup = $(this);
+		if (!popup.hasClass("show")) {
+			popup.toggleClass("show");
+			setTimeout(function(){popup.toggleClass("show");}, 2000);
+		}
+	});
 
 	var item = category_items["all"][item_id];
 	var price = item.price;
