@@ -6034,13 +6034,11 @@ footer {
   padding: 15px;
   background: #C0ABAF; }
 
-[id^="cartitem"], #cartisempty {
-  margin-bottom: 10px; }
-
 [id^="cartitem"] {
   border: solid;
   border-width: 2px 0;
   border-color: #9A898C;
+  margin-bottom: 10px;
   background-color: #AD9A9E; }
 
 .cart-img-container {
@@ -6055,6 +6053,9 @@ footer {
   height: 100%;
   background: #fff; }
 
+.close-button-wrapper {
+  padding-right: 0; }
+
 .cart-item-descr {
   padding-top: 20px; }
 
@@ -6062,10 +6063,12 @@ footer {
   padding-top: 20px; }
 
 [id^="cartbtn"] {
-  width: 31px; }
+  width: 31px;
+  margin: 5px; }
 
 [id^="cartinput"] {
   width: 48px;
   text-align: center;
-  margin: 0 10px; }
+  margin: 5px 0;
+  border-radius: 5px; }
 

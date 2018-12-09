@@ -203,6 +203,10 @@ footer {
 	background: #fff;
 }
 
+.close-button-wrapper {
+	padding-right: 0;
+}
+
 .cart-item-descr {
 	padding-top: 20px;
 }
@@ -213,10 +217,12 @@ footer {
 
 [id^="cartbtn"] {
 	width: 31px;
+	margin: 5px;
 }
 
 [id^="cartinput"] {
 	width: 48px;
 	text-align: center;
-	margin: 0 10px;
+	margin: 5px 0;
+	border-radius: 5px;
 }

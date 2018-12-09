@@ -167,7 +167,7 @@ function addToCart(item_id) {
 		cart_items[item_id] = 0;
 		$("#itemsincart").append(`
 			<div class="row" id="cartitem${item_id}">
-				<div class="col-1 d-flex align-items-center justify-content-center">
+				<div class="close-button-wrapper col-1 d-flex align-items-center justify-content-center">
 					<button type="button" class="btn btn-sm btn-primary" id="cartbtnclose${item_id}" onclick="closeItem(${item_id})">✕</button>
 				</div>
 				<div class="col-3 cart-img-container">
@@ -185,7 +185,9 @@ function addToCart(item_id) {
 						<input type="text" id="cartinput${item_id}" oninput="inputboxChanged(${item_id})" value="0" />
 						<button type="button" class="btn btn-sm btn-primary" id="cartbtnplus${item_id}" onclick="changeQuantity(${item_id}, 1)">+</button>
 					</div>
-					<h4 class="price" id="totalprice${item_id}">${price}</h4>
+					<div class="d-flex justify-content-end">
+						<h4 class="price" id="totalprice${item_id}">${price}</h4>
+					</div>
 				</div>
 			</div>
 			</div>
@@ -229,6 +231,7 @@ function closeItem(item_id) {
 		$("#cartisempty").show();
 		$("#formwrapper").hide();
 	}
+	setSum();
 }
 
 function setSum() {
