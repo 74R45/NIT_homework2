@@ -226,3 +226,38 @@ footer {
 	margin: 5px 0;
 	border-radius: 5px;
 }
+
+.popup {
+	visibility: hidden;
+	width: 140px;
+	font-weight: bold;
+	background-color: $silver2;
+	color: $pink2;
+	text-align: center;
+	border-radius: 6px;
+	padding: 6px;
+	position: relative;
+	z-index: 1;
+	left: 2.35%;
+}
+
+.popup::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: $silver2 transparent transparent transparent;
+}
+
+.popup.show {
+	visibility: visible;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
