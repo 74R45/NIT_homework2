@@ -2,7 +2,8 @@ var categories = {};
 var category_items = {};
 
 function getCategoryIds(callback) {
-	$.getJSON("https://nit.tron.net.ua/api/category/list", function(data, status) {
+	$.getJSON("https://nit.tron.net.ua/api/category/list")
+	.done(function(data, status) {
 		$.each(data, function(key, value){
 			categories[value.id] = value;
 		});
@@ -11,6 +12,9 @@ function getCategoryIds(callback) {
 			$("#category-list").append(`<a class="nav-link" id="category${category_id}" data-toggle="pill" onclick="changeView(${category_id})" aria-selected="false">${category.name} - ${category.description}</a>`);
 		};
 		callback();
+	})
+	.fail(function() {
+		console.log("API error: couldn't access the category list.");
 	});
 }
 
@@ -19,19 +23,24 @@ function getCategoryItems() {
 		// That's my solution to the "last value" problem. Try/catch block has its own scope, therefore category_id will not change.
 		try {throw i}
 		catch(category_id) {
-			$.getJSON("https://nit.tron.net.ua/api/product/list/category/"+category_id, function(data, status) {
+			$.getJSON("https://nit.tron.net.ua/api/product/list/category/"+category_id)
+			.done(function(data, status) {
 				category_items[category_id] = {};
 				$.each(data, function(key, value) {
 					category_items[category_id][value.id] = value;
 				});
-			});	
+			})
+			.fail(function() {
+				console.log(`API error: couldn't access the product list of category ${category_id}.`);
+			});
 		}
 	}
 }
 
 getCategoryIds(getCategoryItems);
 
-$.getJSON("https://nit.tron.net.ua/api/product/list", function(data, status){
+$.getJSON("https://nit.tron.net.ua/api/product/list")
+.done(function(data, status){
 	category_items["all"] = {};
 	$.each(data, function(key, value){
 		category_items["all"][value.id] = value;
@@ -65,6 +74,9 @@ $.getJSON("https://nit.tron.net.ua/api/product/list", function(data, status){
 			</div>
 		`);
 	}
+})
+.fail(function() {
+	console.log("API error: couldn't access the product list.");
 });
 
 function changeView(category_id) {
