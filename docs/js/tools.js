@@ -227,7 +227,7 @@ function closeItem(item_id) {
 	$(`#cartitem${item_id}`).remove();
 	if ($.isEmptyObject(cart_items)) {
 		$("#cartisempty").show();
-		$("#inputForm").hide();
+		$("#formwrapper").hide();
 	}
 }
 
