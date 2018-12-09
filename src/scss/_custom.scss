@@ -15,3 +15,31 @@ $container-max-widths: (
 );
 
 @import "~bootstrap/scss/bootstrap";
+$white1: #F2D7ED;
+$white2: #DCC4D8;
+$silver2: #C0ABAF;
+$pink1: #A5668B;
+$pink2: #965D7F;
+$pink3: #885472;
+$pink4: #794B66;
+$purple1: #69306D;
+
+.btn-primary, .btn-primary.disabled, .btn-primary:disabled {
+	color: $silver2;
+	background-color: $pink1;
+	border-color: $pink1;
+}
+.btn-primary:not(:disabled):not(.disabled):hover {
+	color: $silver2;
+	background-color: $pink2;
+	border-color: $purple1;
+}
+.btn-primary:focus, .btn-primary.focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus {
+	box-shadow: none;
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active {
+	color: $silver2;
+	background-color: $pink3;
+	border-color: $purple1;
+}

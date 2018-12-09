@@ -25,8 +25,15 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
+                    'resolve-url-loader',
                     'sass-loader'
                 ]
+            },
+            {
+                test: /\.svg/,
+                use: {
+                    loader: 'svg-url-loader'
+                }
             }
         ]
     },
